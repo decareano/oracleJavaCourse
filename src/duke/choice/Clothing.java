@@ -18,9 +18,16 @@ public class Clothing {
     private String description;
     private Double price;
     private String size = "M";
-    public final double MIN_PRICE = 10.0;
-    public final double TAX = 0.2;
+    public static final double MIN_PRICE = 10.0;
+    public static final double TAX = 0.2;
 
+    public Clothing(String description, Double price, String size) {
+        this.description = description;
+        this.price = price;
+        this.size = size;
+    }
+
+    
 
 //    public void measure(int value) {
 //        size = (value < 10) ? "S" : "M";
