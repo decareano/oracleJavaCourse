@@ -48,6 +48,17 @@ public class ShopApp {
 //        items[3].setPrice((Double) 10.5);
 //        items[3].setSize("M");
 
+        int average = 0;
+        int count = 0;
+                
+        for (Clothing item : c1.getItems()) {
+            count++;
+            double result = item.getPrice();
+            System.out.println("Items: " + (result / count));
+
+        }        
+               
+
         //int measurement = 14;  // he has this not commented out
         //c1.setSize(measurement);
         c1.addItems(items);
