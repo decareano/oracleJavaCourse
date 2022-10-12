@@ -30,44 +30,32 @@ public class ShopApp {
         Clothing item2 = new Clothing("Orange T-Shirt", 8.0, "S");
 
         Clothing[] items = {item1, item2, new Clothing("Green Scarf", 5.0, "S"), new Clothing("Blue T-Shirt", 10.5, "M")};
+        
+        int measureament = 8;
+        
+        c1.addItems(items);
+        System.out.println("Customer is" + c1.getName() + "." + c1.getSize() + "." + c1.getTotalClothingCost());
 
-//        item1.setDescription("Blue Jacket");
-//        item1.setPrice((Double) 20.9);
-//        item1.setSize("M");
-//
-//        item2.setDescription("Orange T-Shirt");
-//        //this becomes 10....if price > MIN_PRICE ? price : MIN_PRICE
-//        item2.setPrice((Double) 8.0);
-//        item2.setSize("S");
-//
-//        items[2].setDescription("Green Scarf");
-//        items[2].setPrice((Double) 5.0);
-//        items[2].setSize("S");
-//
-//        items[3].setDescription("Blue T-Shirt");
-//        items[3].setPrice((Double) 10.5);
-//        items[3].setSize("M");
-
-        int average = 0;
-        int count = 0;
+        
                 
         for (Clothing item : c1.getItems()) {
-            count++;
-            double result = item.getPrice();
-            System.out.println("Items: " + (result / count));
 
-        }        
-               
-
-        //int measurement = 14;  // he has this not commented out
-        //c1.setSize(measurement);
-        c1.addItems(items);
-        System.out.println("Customer is: " + c1.getName() + ", " + c1.getSize() + ", " + c1.getTotalClothingCost());
-        for (Clothing item : c1.getItems()) {
-
-            System.out.println("Items: " + item.getDescription());
+            System.out.println("Items" + item.getDescription() + "." + item.getSize() + "." + item.getPrice());
 
         }
+        int average = 0;
+        int count = 0;
+        
+        for (Clothing item : c1.getItems()) {
+
+            count++;
+            average += item.getPrice();
+
+        }
+        average = average / count;
+        System.out.println("Average price" + average + "Count " + count);
+
+       
 
     }
 }
