@@ -1,3 +1,5 @@
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -9,39 +11,43 @@
  */
 public class Solution {
     
-    
-        public static int maxProfit(int[] prices) {
-            int minprice = Integer.MAX_VALUE;
-            int maxProfit = 0;
-            
-            
-            for (int i = 0; i < prices.length; i++) {
-              
-                //for (int j = i+1; j < prices.length; j++) {
-                  
-                     // below is gimmick (Integer.MAX_VALUE) to get the expression to return true
-                        // and thus enter the if statement
-                    // and be able to set minprice to the integers in the array
-                        if (prices[i] < minprice) {
-                            //System.out.println(prices[i] < minprice);
-                            minprice = prices[i];
-                            System.out.println(minprice);
-                        } else if (prices[i] - minprice > maxProfit) {
-                            maxProfit = prices[i] - minprice;
-                            //System.out.println(maxProfit);
-                        }
-                       
-                //} 
-            
-            }
-            return maxProfit;
-    
-        }
+  
     public static void main(String[] args) {
-        int[] prices = {9,3,4,7,12,8};
-        System.out.println(Solution.maxProfit(prices));
-        
+    //currLet = Character.toString(str.charAt(currPos));
+
+
+    String str = "AAAACCCGGT";
+    
+    char[] target = new char[4];
+   
+    char[] str1 = str.toCharArray();
+  
+     target[0] = 'A';
+     target[1] = 'T'; 
+     target[2] = 'C';
+     target[3] = 'G';
+    
+ 
+        for (int i = 0; i < str.length(); i++)   {          
+            
+                if (str1[i] == 'A') {
+                  str1[i] = target[1];
+                } else if (str1[i] == 'T') {
+                  str1[i] = target[0];
+                } else if (str1[i] == 'C') {
+                  str1[i] = target[3];
+                } else if (str1[i] == 'G') {
+                  str1[i] = target[2];
+                }
+                  
+        }
+        // int[] intArray = count;
+        // String joinedString = Arrays.toString(intArray);
+        // //joinedString = Arrays.toString(intArray);
+        //System.out.println(count[0] + " " + count[1] + " " + count[2] + " " + count[3]);
+        System.out.println(str1);
         
     }
     
 }
+    

@@ -8,6 +8,9 @@
  * @author mgobelli
  */
 
+import java.io.*;
+import java.text.NumberFormat;
+import java.util.*;
 
 class ListNode {
       int val;
@@ -16,9 +19,13 @@ class ListNode {
       ListNode(int val) { this.val = val; }
       ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
+
+
         
-class addTwoLL {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+public class addTwoLL {
+    
+    
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(),
 	result = dummy;
         
@@ -60,11 +67,19 @@ class addTwoLL {
         
         return result.next;
     }
-
-
+    
+    
+    
     public static void main(String[] args) {
-        ListNode mytest = new ListNode();
-        
+        ListNode two = new ListNode(5);
+        ListNode one = new ListNode(1, two);
+        ListNode l1 = new ListNode(8, one);
+
+        ListNode twoB = new ListNode(4);
+        ListNode oneB = new ListNode(6, twoB);
+        ListNode l2 = new ListNode(5, oneB);
+
+        System.out.println(addTwoNumbers(l1, l2));
         
         
     }
